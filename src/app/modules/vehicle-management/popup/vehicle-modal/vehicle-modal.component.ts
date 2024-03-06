@@ -97,7 +97,6 @@ export class VehicleModalComponent {
 
   onChangeVehicleType(event: any) {
     this.filteredVehicleTypeOptions = of(this._filter(event.target.value || '', this.vehicleTypeOptions))
-
   }
 
   onChangeManufacture(event: any) {
@@ -111,14 +110,16 @@ export class VehicleModalComponent {
   }
 
   onSelectionChange(event: any) {
+    this.updateModelList(event.option.value)
+  }
+
+  updateModelList(value: string) {
     this.manufactureOptions.find(m => {
-      if (m.name === event.option.value) {
-        debugger
+      if (m.name === value) {
         this.modalNoOptions = m.modelList
         this.filteredModalNoOptions = of([])
       }
     })
-
   }
 
   setFromValue(data: Vehicle) {
@@ -126,6 +127,8 @@ export class VehicleModalComponent {
     this.vehicleType = data?.vehicleType;
     this.manufacture = data?.manufacture;
     this.modalNo = data?.modalNo;
+
+    this.updateModelList(data.manufacture)
   }
 
   validateAction() {

@@ -1,2 +1,2 @@
-<app-vehicle-head></app-vehicle-head>
-<app-vehicle-table></app-vehicle-table>
+<app-vehicle-head (emitSearch)="performAction($event)"></app-vehicle-head>
+<app-vehicle-table [search]="searchKey"></app-vehicle-table>

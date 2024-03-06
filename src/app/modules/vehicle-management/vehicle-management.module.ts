@@ -47,9 +47,6 @@ import { SearchPipe } from './pipes/search.pipe';
     MatTableModule,
     MatAutocompleteModule,
     MatButtonModule
-  ],
-  providers: [
-    SearchPipe
   ]
 })
 export class VehicleManagementModule { }

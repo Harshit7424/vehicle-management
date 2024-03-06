@@ -14,15 +14,15 @@ export class ConfirmComponent {
     private dialog: MatDialogRef<ConfirmComponent>,
     private readonly store: Store<Store>,
     @Inject(MAT_DIALOG_DATA) public data: any
-    ) {}
+  ) { }
 
   close(action='') {
     switch (action) {
       case 'delete':
-        this.store.dispatch(deleteVehicle({vehicleNo: this.data.vehicleNo}))
+        this.store.dispatch(deleteVehicle({ vehicleNo: this.data.vehicleNo }))
         break
-      }
-      this.dialog.close({})
+    }
+    this.dialog.close({})
   }
 
 }

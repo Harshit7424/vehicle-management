@@ -1,0 +1,11 @@
+<ng-container *ngIf="vehicleList?.length">
+    <div class="custom-table" >
+        <div class="table-row header">
+            <div class="custom-cell" *ngFor="let header of displayHeaders">{{ header }}</div>
+        </div>
+        <app-vehicle-item [data]="data" *ngFor="let data of vehicleList | search: search"></app-vehicle-item>
+    </div>
+</ng-container>
+<ng-container *ngIf="!vehicleList?.length">
+    <h6 class="p-2">No records found.</h6>
+</ng-container>

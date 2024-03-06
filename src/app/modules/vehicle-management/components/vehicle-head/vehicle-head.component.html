@@ -1,0 +1,7 @@
+<header class="header">
+    <h2 class="heading">Vehicles</h2>
+    <nav class="main-nav">
+        <mat-icon (click)="openVehicleModal()">add</mat-icon>
+        <input matInput placeholder="Search.." type="search" [(ngModel)]="search" #searchInput (input)="emitSearch.emit({action: 'search', search: search})">
+    </nav>
+</header>

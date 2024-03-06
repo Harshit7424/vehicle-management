@@ -9,7 +9,11 @@ import { getVehicles } from '../../reducer/vehicle.action';
   styleUrls: ['./vehicle-container.component.css']
 })
 export class VehicleContainerComponent {
-
+  searchKey = '';
   constructor(private readonly store: Store<{vehicle: VehicleModel}>) {this.store.dispatch(getVehicles())}
+
+  performAction(event: any) {
+    if(event?.action == 'search') this.searchKey = event?.search;
+  }
 
 }
