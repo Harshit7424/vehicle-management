@@ -1,0 +1,13 @@
+<div class="table-row">
+    <div class="custom-cell">{{ data.vehicleNo }}</div>
+    <div class="custom-cell">{{ data.modalNo }}</div>
+    <div class="custom-cell">{{ data.manufacture }}</div>
+    <div class="custom-cell">{{ data.vehicleType }}</div>
+    <div class="custom-cell">{{ data.createdAt | date: 'dd/mm/yyyy' }}</div>
+    <div class="custom-cell action">
+        <span>
+            <mat-icon (click)="onEdit(data)">edit</mat-icon>
+            <mat-icon color="accent" (click)="onDelete(data)">delete</mat-icon>
+        </span>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="confirm-head">
+        <h2>Confirm the action</h2>
+        <mat-icon fontIcon="close" (click)="close()"></mat-icon>
+    </div>
+    <div class="confirm-body">
+        <p>Do you really want to delete this record?</p>
+    </div>
+    <div class="confirm-action">
+        <button class="mr-2" mat-flat-button  (click)="close()">Cancel</button>
+        <button mat-flat-button color="accent" type="submit" (click)="close('delete')">Confirm</button>
+    </div>
+</div>

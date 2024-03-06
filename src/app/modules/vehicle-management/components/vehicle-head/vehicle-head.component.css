@@ -1,0 +1,36 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 3px 0px 5px #d3d3d3;
+    gap: 0 1rem;
+    padding: .625rem;
+    line-height: 2;
+}
+
+h2 {
+    margin: 0%;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 2;
+    letter-spacing: 2px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+nav mat-icon {
+    cursor: pointer;
+}
+
+nav input {
+    line-height: 2;
+}
+
+nav input:focus-within {
+    outline: none;
+}

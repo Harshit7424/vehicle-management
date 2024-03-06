@@ -1,0 +1,64 @@
+<div class="container">
+    <div class="vehicle-head">
+        <h2>{{ data?.title }}</h2>
+        <mat-icon fontIcon="close" (click)="close()"></mat-icon>
+
+    </div>
+    <div class="vehicle-body">
+        <div class="row">
+            <div class="col-12">
+                <!-- vehicle no. field input type text  -->
+                <mat-form-field class="w-100" appearance="outline">
+                    <mat-label>Vehicle No.</mat-label>
+                    <input matInput [(ngModel)]="vehicleNo">
+                </mat-form-field>
+            </div>
+
+            <div class="col-6">
+                <!-- vehicle manufacture Autocomplete -->
+                <mat-form-field appearance="outline">
+                    <mat-label>Manufacture</mat-label>
+                    <input type="text" aria-label="Number" matInput [(ngModel)]="manufacture"
+                        [matAutocomplete]="autoManufacture" (input)="onChangeManufacture($event)">
+                    <mat-autocomplete #autoManufacture="matAutocomplete" (optionSelected)="onSelectionChange($event)">
+                        <mat-option *ngFor="let m of filteredManufactureOptions | async"
+                            [value]="m.name">{{m.name}}</mat-option>
+                    </mat-autocomplete>
+                </mat-form-field>
+            </div>
+
+
+            <div class="col-6">
+                <!-- vehicle Modal No. Autocomplete -->
+                <mat-form-field appearance="outline">
+                    <mat-label>Modal No.</mat-label>
+                    <input type="text" aria-label="Number" matInput [(ngModel)]="modalNo" (input)="onChangeModalNo($event)"
+                        [matAutocomplete]="autoModalNo">
+                    <mat-autocomplete #autoModalNo="matAutocomplete">
+                        <mat-option *ngFor="let option of filteredModalNoOptions | async"
+                            [value]="option.name">{{option.name}}</mat-option>
+                    </mat-autocomplete>
+                </mat-form-field>
+            </div>
+
+
+            <div class="col-12">
+                <!-- vehicle vehicle type Autocomplete -->
+                <mat-form-field appearance="outline">
+                    <mat-label>Vehicle Type</mat-label>
+                    <input type="text" aria-label="Number" matInput [(ngModel)]="vehicleType" (input)="onChangeVehicleType($event)"
+                        [matAutocomplete]="autoVehicleType">
+                    <mat-autocomplete #autoVehicleType="matAutocomplete">
+                        <mat-option *ngFor="let option of filteredVehicleTypeOptions | async"
+                            [value]="option.name">{{option.name}}</mat-option>
+                    </mat-autocomplete>
+                </mat-form-field>
+            </div>
+        </div>
+    </div>
+
+    <div class="vehicle-action">
+        <button class="mr-2" mat-flat-button color="accent" (click)="close()">Cancel</button>
+        <button mat-flat-button color="primary" type="submit" (click)="onSubmit()">Submit</button>
+    </div>
+</div>

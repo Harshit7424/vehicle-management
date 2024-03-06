@@ -1,0 +1,31 @@
+.confirm-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.625rem;
+}
+
+.confirm-head mat-icon {
+    cursor: pointer;
+}
+
+.confirm-head h2 {
+    font-size: 1.5rem;
+}
+
+.confirm-body {
+    padding: .625rem;
+}
+
+.confirm-body p {
+    color: #736161;
+    margin: 0%;
+}
+
+.confirm-action {
+    padding: 0.625rem;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 0 0.625rem;
+}
