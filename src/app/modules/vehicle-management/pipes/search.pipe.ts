@@ -14,7 +14,7 @@ export class SearchPipe implements PipeTransform {
 
     searchQuery = searchQuery.trim()
 
-    const searchResult = vehicles.filter(vehicles => JSON.stringify(vehicles).includes(searchQuery));
+    const searchResult = vehicles.filter(vehicles => JSON.stringify(vehicles).toLowerCase().includes(searchQuery.toLowerCase()));
     return searchResult
   }
 }

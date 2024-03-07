@@ -111,6 +111,7 @@ export class VehicleModalComponent {
 
   onSelectionChange(event: any) {
     this.updateModelList(event.option.value)
+    this.modalNo = '';
   }
 
   updateModelList(value: string) {
